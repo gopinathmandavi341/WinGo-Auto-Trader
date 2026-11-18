@@ -1,0 +1,15 @@
+केवल Android मोबाइल से APK बनाने का तरीका (GitHub Cloud Build)
+
+जरूरत: GitHub account, मोबाइल Chrome, ZIP extract करने वाला ऐप (जैसे ZArchiver)।
+
+1. ZIP को डाउनलोड करके Extract करें। अंदर wingo_auto_trader फ़ोल्डर मिलेगा।
+2. Chrome में https://github.com खोलकर लॉगिन करें।
+3. + > New repository चुनें। नाम: wingo-auto-trader रखें और Public या Private चुनकर Create repository करें।
+4. नए repository में Add file > Upload files चुनें। Extract किए हुए wingo_auto_trader फ़ोल्डर के अंदर की सभी फाइलें/फ़ोल्डर अपलोड करें। ध्यान दें: अंदर की सामग्री अपलोड करें, पूरा outer folder नहीं। .github फ़ोल्डर भी अवश्य अपलोड करें।
+5. Commit changes दबाएँ।
+6. Repository के Actions टैब में Build Android APK workflow खोलें। यदि अनुमति माँगे तो “I understand my workflows, go ahead and enable them” चुनें।
+7. “Run workflow” दबाएँ। Build पूरा होने तक प्रतीक्षा करें।
+8. सफल run खोलें, नीचे Artifacts में WinGo-Auto-Trader-debug-APK डाउनलोड करें। ZIP को Extract करें; app-debug.apk मिलेगा।
+9. APK खोलकर Android की अनुमति से install करें। केवल अपने बनाए/विश्वसनीय APK को इंस्टॉल करें।
+
+सीमाएँ: यह debug APK है। इस प्रोटोटाइप में पाँच टाइमर, UI और डेमो ट्रेडिंग हैं; यह लाइव वेबसाइट डेटा नहीं पढ़ता और असली पैसे से बेट नहीं लगाता। लाइव API जोड़ने के लिए हर साइट की अनुमति प्राप्त आधिकारिक API चाहिए।
